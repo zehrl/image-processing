@@ -17,27 +17,33 @@ public class Main {
       System.out.println("gray scale image: " + grayscale);
 
       // Show in a popup window
-      JFrame frame = new JFrame("Grayscale Preview");
-      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      ImageProcessorViewer imagePV = new ImageProcessorViewer("Grayscale Demonstration");
+      imagePV.add(imageProcessor.getImage());
+      imagePV.add(grayscale);
+      imagePV.createWindow();
 
-      int maxHeight = 500; //px
-      int width = imageProcessor.getImage().getWidth();
-      int height = imageProcessor.getImage().getHeight();
-      double scale = 0.3;
 
-      Image scaledImage = imageProcessor.getImage().getScaledInstance((int) (width * scale), (int) (height * scale), Image.SCALE_SMOOTH);
-      Image scaledGrayscale = grayscale.getScaledInstance((int) (width * scale), (int) (height * scale), Image.SCALE_SMOOTH);
-
-      JLabel label = new JLabel(new ImageIcon(scaledImage), SwingConstants.LEFT);
-      JLabel grayscaleLabel = new JLabel(new ImageIcon(scaledGrayscale), SwingConstants.RIGHT);
-
-      JPanel panel = new JPanel();
-      panel.add(label);
-      panel.add(grayscaleLabel);
-
-      frame.add(panel);
-      frame.pack(); // size frame to fit image
-      frame.setLocationRelativeTo(null); // center on screen
-      frame.setVisible(true);
+      // JFrame frame = new JFrame("Grayscale Preview");
+      // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      //
+      // int maxHeight = 500; //px
+      // int width = imageProcessor.getImage().getWidth();
+      // int height = imageProcessor.getImage().getHeight();
+      // double scale = 0.3;
+      //
+      // Image scaledImage = imageProcessor.getImage().getScaledInstance((int) (width * scale), (int) (height * scale), Image.SCALE_SMOOTH);
+      // Image scaledGrayscale = grayscale.getScaledInstance((int) (width * scale), (int) (height * scale), Image.SCALE_SMOOTH);
+      //
+      // JLabel label = new JLabel(new ImageIcon(scaledImage));
+      // JLabel grayscaleLabel = new JLabel(new ImageIcon(scaledGrayscale));
+      //
+      // JPanel panel = new JPanel();
+      // panel.add(label);
+      // panel.add(grayscaleLabel);
+      //
+      // frame.add(panel);
+      // frame.pack(); // size frame to fit image
+      // frame.setLocationRelativeTo(null); // center on screen
+      // frame.setVisible(true);
    }
 }
