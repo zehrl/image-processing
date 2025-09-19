@@ -1,4 +1,5 @@
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class ImageProcessor {
    /**
     * Processes the image into grayscale.
     *
-    * @return BufferedImage
+    * @return The original {@link BufferedImage} but in grayscale
     */
    public BufferedImage toGrayscale() {
 
@@ -57,9 +58,26 @@ public class ImageProcessor {
 
    /**
     * Get the original image
+    *
     * @return BufferedImage
     */
    public BufferedImage getImage() {
       return image;
    }
+
+   // TODO: Add scaling method
+   // /**
+   //  * Scales the image proportionally by a percentage represented by a decimal (ex. 0.5 = 50% the size)
+   //  * @param scale The amount to scale the image by
+   //  * @return The original {@link BufferedImage} image but scaled up or down
+   //  */
+   // public BufferedImage scaleImage(double scale) {
+   //    int width = this.image.getWidth();
+   //    int height = this.image.getHeight();
+   //    return this.image.getScaledInstance(
+   //       (int) (width * scale),
+   //       (int) (height * scale),
+   //       Image.SCALE_SMOOTH
+   //    );
+   // }
 }
