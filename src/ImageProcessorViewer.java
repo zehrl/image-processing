@@ -17,7 +17,7 @@ public class ImageProcessorViewer {
       frame.setLocationRelativeTo(null); // center on screen
    }
 
-   public void add(BufferedImage image) {
+   public void add(Image image) {
       JLabel label = new JLabel(new ImageIcon(image));
       this.panel.add(label);
       this.frame.add(this.panel);
